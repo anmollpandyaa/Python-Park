@@ -1,0 +1,48 @@
+stack = []
+
+def push():
+    element = int(input("Enter element: "))
+    stack.append(element)
+    print(f"{element} has been pushed into stack.")
+    print(f"Updated stack: {stack}")
+def pop():
+    if not stack:
+        print("Stack is empty!")
+    if stack:
+        popped = stack.pop()
+        print(f"{popped} has been popped from the stack.")
+        print(f"Updated stack: {stack}")
+def top():
+    if not stack:
+        print("Stack is empty!")
+    
+    if stack:
+        print(stack[0])
+        
+def isEmpty():
+    if not stack:
+        print("Stack is empty.")
+    else:
+        print("Stack is not empty.")
+        
+def size():
+    size = len(stack)
+    print(f"Size of the stack is {size}.")
+
+
+choice = 'y'
+while(choice == 'y'):
+    operation = int(input("Choose stack operation ->\n1. Push\n2. Pop\n3. Peek\n4. Check empty\n5. Size\nEnter the corresponding number:  "))
+    match operation:
+        case 1:
+            push()
+        case 2:
+            pop()
+        case 3:
+            top()
+        case 4:
+            isEmpty()
+        case 5:
+            size()
+    choice = input("Continue operations? (press y to continue): ")
+    print("Exited the stack successfully.")
